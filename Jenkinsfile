@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'votre-user-docker/mon-site-web'
+        DOCKER_IMAGE = 'badraalou/mon-site-web'
         DOCKER_TAG = "${BUILD_NUMBER}"
         VPS_IP = '192.168.1.155'
         VPS_USER = 'badra' 
