@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'badraalou/mon-site-web'
         DOCKER_TAG = "${BUILD_NUMBER}"
-        VPS_IP = '192.168.1.156'
+        VPS_IP = '192.168.1.158'
         VPS_USER = 'badra' 
     }
 
