@@ -6,6 +6,7 @@ pipeline {
         DOCKER_TAG = "${BUILD_NUMBER}"
         VPS_IP = '192.168.1.158'
         VPS_USER = 'badra' 
+        
     }
 
     stages {
