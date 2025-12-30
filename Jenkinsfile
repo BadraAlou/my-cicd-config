@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'badraalou/mon-site-web'
         DOCKER_TAG = "${BUILD_NUMBER}"
-        VPS_IP = '192.168.1.155'
+        VPS_IP = '192.168.1.156'
         VPS_USER = 'badra' 
     }
 
@@ -24,7 +24,7 @@ pipeline {
                 script {
                     echo 'Envoi vers Docker Hub...'
                     withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER')]) {
-                        sh "docker login -u $DOCKER_USER -p $DOCKER_PASS"
+                        sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
                         sh "docker push $DOCKER_IMAGE:$DOCKER_TAG"
                         sh "docker push $DOCKER_IMAGE:latest"
                     }
